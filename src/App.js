@@ -1,8 +1,10 @@
 import "./App.css";
 import JSONDATA from "./Data1.json"
 import {useState} from 'react'
-import Keypress from "./keypress"
+import EnterKeypress from "./components/enterkeypress"
 import Card from "./components/Card"
+import Clicked from "./components/clicked"
+import clicked from "./components/clicked";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -16,10 +18,10 @@ function App() {
       onChange={(event) => {
         setSearchTerm(event.target.value);
       }}
-      onKeyPress= //{Keypress}
+      onKeyPress=
       {(event) => {
         if (event.key === 'Enter') 
-        {Keypress()}
+        {EnterKeypress()}
         }}
         />
     
@@ -41,7 +43,7 @@ function App() {
           <div 
           className="user" 
           key={key}
-          onClick={Keypress}
+          onClick={clicked}
           >
             <Card id= {val.id} name={val.name} address={val.address} pincode={val.pincode}/>
             <hr />

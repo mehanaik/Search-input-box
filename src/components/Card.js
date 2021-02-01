@@ -1,5 +1,6 @@
 import React from "react"
 import CardBody from "./CardBody"
+import Clicked from "./clicked"
 
 class Card extends React.Component {
     render() {

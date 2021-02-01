@@ -1,6 +1,13 @@
 import React from "react"
-
+import Clicked from "./clicked"
 class CardBody extends React.Component {
+
+  emptyCard(){
+    return(
+    alert("No User Found")
+    )
+  }
+
     render() {
       return (
         <div className="card-body" >  
