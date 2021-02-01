@@ -1,5 +1,6 @@
 import React from "react"
 
+//function to handle the Enter key
 function EnterKeypress(props){
 
     return(

@@ -6,8 +6,10 @@ import Card from "./components/Card"
 import Clicked from "./components/clicked"
 import clicked from "./components/clicked";
 
+//App function
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
+  const empt="No User Found"
   return(
     <div className="App">
       <input 
@@ -15,6 +17,7 @@ function App() {
       className="searchbox"
       type="text" 
       placeholder="Search id, name, address, pincode ..." 
+      //onchange event
       onChange={(event) => {
         setSearchTerm(event.target.value);
       }}
@@ -24,8 +27,8 @@ function App() {
         {EnterKeypress()}
         }}
         />
-    
 
+      {/* filtering out data from the database */}
       {JSONDATA.filter((val) => {
         if (searchTerm == "") {
           return val
@@ -65,67 +68,3 @@ function App() {
 // }
 
 export default App;
-
-
-
-// import React, {Component} from "react"
-// class App extends Component{
-//   constructor() {
-//     super()
-//     this.state = {
-//       loading: false,
-//       character: {}
-//     }
-//   }
-
-//   componentDidMount(){
-//     this.setState({loading: true})
-//     fetch("http://www.mocky.io/v2/5ba8efb23100007200c2750c")
-//     .then(response => response.json())
-//     .then(data => {
-//       this.setState({
-// 		loading: false,
-//         character: data,
-//       })
-// 	})
-// 	console.log("Changed",this.state.character.id)
-//   }
-
-//   render(){
-//     const text = this.state.loading? "Loading..." : this.state.character.id
-//     return(
-//       <div>
-//         <h1>{text}</h1>
-//       </div>
-//     )
-//   }
-
-// }
-// export default App 
-
-
-
-
-//mapping=============================================================================================================
-// class App extends React.Component{
-//   constructor() {
-//     super()
-//     this.state = {
-//       todos: todosData
-//     }
-//     this.handleChange = this.handleChange.bind(this)
-//   }
-//   handleChange(id) {
-//     //console.log("Changed",id)
-//     this.setState(prevState => {
-//       const updatedTodos = prevState.todos.map(todo => {
-//         if (todo.id ===id) {
-//           todo.completed = !todo.completed
-//         }
-//         return todo
-//       })
-//       return {
-//         todos: updatedTodos
-//       }
-//     })
-//   }

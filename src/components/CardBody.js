@@ -1,5 +1,7 @@
 import React from "react"
 import Clicked from "./clicked"
+
+//body of the card component
 class CardBody extends React.Component {
 
   emptyCard(){

@@ -2,6 +2,7 @@ import React from "react"
 import CardBody from "./CardBody"
 import Clicked from "./clicked"
 
+//card component
 class Card extends React.Component {
     render() {
       return (
